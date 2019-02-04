@@ -1,0 +1,17 @@
+<div style="display: flex;flex-direction: column ">
+<mat-card style=" width:500px;left:30%;height: 50%">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <input matInput  placeholder="Username" formControlName="username">
+    <mat-error>Required</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Password" formControlName="password">
+      <mat-error>Required</mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="accent" style="align-self: flex-end">Login</button>
+  </form>
+</mat-card>
+</div>

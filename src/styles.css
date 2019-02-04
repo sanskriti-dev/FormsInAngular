@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+header,footer
+{
+  background: black;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  text-align: center;
+}
+header
+{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width:100% ;
+}
+.list
+{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30px;
+  margin: 10px;
+  list-style: none;
+}
+.list-item
+{
+  display: flex;
+  width:auto;
+  flex-wrap: wrap;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 5px;
+
+}
+li:hover ,
+li:active
+{
+  color: yellow;
+  cursor: pointer;
+  border: 2px solid yellow;
+}
+.image
+{
+  bottom: 30%;
+  width: auto;
+  height: 50%;
+  margin-left: 5px;
+  alignment: left;
+  left: 0%;
+}
+
