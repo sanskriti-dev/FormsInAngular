@@ -14,6 +14,6 @@ export class MainComponent {
 
   form = new FormGroup({
     username: new FormControl(null, [Validators.required, Validators.max(3)]),
-    Password: new FormControl(null, [Validators.required])
+    password: new FormControl(null, [Validators.required])
   });
 }
