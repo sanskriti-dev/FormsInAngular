@@ -11,14 +11,17 @@ export class SignupComponent {
   constructor() {
   }
 
-  form = new FormGroup({
+  form1 = new FormGroup({
     firstname: new FormControl(null, [Validators.required]),
     lastname: new FormControl(null, [Validators.required]),
     email: new FormControl(null, [Validators.required, Validators.email]),
-    contact: new FormControl(null, [Validators.required, Validators.max(10)]),
+    contact: new FormControl(null, [Validators.required]),
+    gender: new FormControl(null, [Validators.required]),
+    Dob: new FormControl(null, Validators.required),
     password: new FormControl(null, [Validators.required]),
-  confirmpassword: new FormControl(null,[Validators.required])
+    category: new FormControl(null, [Validators.required]),
+    confirmpassword: new FormControl(null, [Validators.required])
 
-});
+  });
 
 }

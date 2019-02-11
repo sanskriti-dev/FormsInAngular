@@ -1,23 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: palevioletred;
+}
+
 header,footer
 {
   background: black;
-}
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-
-  text-align: center;
-}
-header
-{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width:100% ;
 }
 .list
 {
@@ -54,5 +47,24 @@ li:active
   margin-left: 5px;
   alignment: left;
   left: 0%;
+}
+.card-header {
+  position: fixed;
+  top: 30%;
+  left:40%
+
+
+}
+.card
+{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+
+}
+mat-step.label
+{
+
+  font-family: "Arial Black";
 }
 

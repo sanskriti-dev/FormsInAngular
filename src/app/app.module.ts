@@ -13,6 +13,18 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {SignupComponent} from './signup/signup.component';
 import {RouterModule} from '@angular/router';
+import {environment} from '../environments/environment.prod';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
+import { AcademicsComponent } from './signup/academics/academics.component';
+import { InterestsComponent } from './signup/interests/interests.component';
 
 // @ts-ignore
 @NgModule({
@@ -21,21 +33,33 @@ import {RouterModule} from '@angular/router';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    SignupComponent
+    SignupComponent,
+    AcademicsComponent,
+    InterestsComponent
   ],
   imports: [
+    MatSelectModule,
+    MatRadioModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatStepperModule,
+    FlexLayoutModule,
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,
     MatButtonModule,
     BrowserAnimationsModule,
     MatCardModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     MatFormFieldModule,
     MatInputModule,
     RouterModule.forRoot([
       {path: 'login', component: MainComponent},
       {
-        path: 'signup', component: SignupComponent}
+        path: 'signup', component: SignupComponent
+      }
     ])
   ],
   providers: [],

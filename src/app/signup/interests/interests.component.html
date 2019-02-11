@@ -1,0 +1,25 @@
+<mat-card>
+  <form [formGroup]="interest" fxLayout="column" fxLayoutAlign="space-evenly" >
+    <div formArrayName="hobbies">
+      <h4>Your Hobbies</h4>
+      <button mat-raised-button color="primary" (click)="AddHobby()">Add</button><br>
+      <div *ngFor=" let s of interest.get('hobbies').controls;let i=index ">
+        <input matInput  placeholder="Add hobby" [formControlName]="i">
+          <mat-error *ngIf="!interest.get('hobbies').at(i).valid &&  interest.get('hobbies').at(i).touched">Required</mat-error>
+      </div>
+    </div>
+    <div formArrayName="Inspiration">
+      <h4>Your Inspirations</h4>
+      <button mat-raised-button color="accent" (click)="AddInspirations()">Add</button>
+      <div *ngFor=" let s of interest.get('Inspiration').controls;let i=index">
+        <input matInput placeholder="Add Inspiration" [formControlName]="i">
+          <mat-error *ngIf="!interest.get('Inspiration').at(i).valid && interest.get('Inspiration').at(i).touched">Cannot be Empty</mat-error>
+      </div>
+    </div>
+    <br>
+    <div fxLayoutAlign="space-between">
+      <button  mat-raised-button color="primary" matStepperPrevious>Back</button>
+      <button  type="submit" mat-raised-button color="primary" matStepperNext>Signup</button>
+    </div>
+  </form>
+</mat-card>
