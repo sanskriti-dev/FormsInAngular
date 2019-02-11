@@ -1,11 +1,11 @@
 <div fxLayoutAlign="center center"   style="top:45%">
   <mat-horizontal-stepper  style="background: palevioletred">
-  <mat-step label="Personal Details">
+  <mat-step label="Personal Details" [completed]="false">
      <mat-card style="width: auto">
        <form [formGroup]="form1" fxLayout="column" fxLayoutAlign="center space-evenly"  >
     <mat-form-field>
       <input matInput placeholder="First Name" formControlName="firstname">
-      <mat-error *ngIf="form1.get('firstname').errors">{{error}}</mat-error>
+      <mat-error >Required</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input matInput placeholder="Last Name"  formControlName="lastname">
@@ -52,11 +52,11 @@
     <button mat-raised-button color="primary" matStepperNext style="align-self: flex-end">Next</button>
   </form>
      </mat-card>
-  </mat-step>
-  <mat-step label="Academics">
+  </mat-step >
+  <mat-step label="Academics" [completed]="false">
     <app-academics></app-academics>
   </mat-step>
-    <mat-step label="Interests">
+    <mat-step label="Interests" [completed]="false">
       <app-interests>
       </app-interests>
     </mat-step>
