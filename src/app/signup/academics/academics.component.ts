@@ -7,7 +7,8 @@ import {FormControl, FormGroup, Validators, FormsModule} from '@angular/forms';
   styleUrls: ['./academics.component.css']
 })
 export class AcademicsComponent implements OnInit {
-
+  minDate = new Date(2000, 0, 1);
+  maxDate = new Date(2020, 0, 1);
   constructor() {
   }
 

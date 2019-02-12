@@ -1,27 +1,46 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validator, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validator, Validators} from '@angular/forms';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
   }
 
-  form1 = new FormGroup({
-    firstname: new FormControl(null, [Validators.required]),
-    lastname: new FormControl(null, [Validators.required]),
+  ngOnInit() {
+
+  }
+  form1 = this.fb.group({
+    firstname: new FormControl(null, [Validators.required, Validators.pattern('[A-Z][a-zA-Z]*')]),
+    lastname: new FormControl(null, [Validators.required, Validators.pattern('[A-Z][a-zA-Z]*')]),
     email: new FormControl(null, [Validators.required, Validators.email]),
-    contact: new FormControl(null, [Validators.required]),
+    contact: new FormControl(null, [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9]*'), Validators.minLength(10)]),
     gender: new FormControl(null, [Validators.required]),
     Dob: new FormControl(null, Validators.required),
-    password: new FormControl(null, [Validators.required]),
+    password: new FormControl(null, [Validators.required, Validators.pattern('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})')]),
     category: new FormControl(null, [Validators.required]),
-    confirmpassword: new FormControl(null, [Validators.required])
-
+    confirmpassword: new FormControl(null, [Validators.required], this.ConfirmpasswordValidator)
   });
+
+
+  ConfirmpasswordValidator(control: FormControl): Promise<any> | Observable<any> {
+    const x = document.getElementById('id').value;
+    const promise = new Promise<any>((resolve, reject) => {
+      setTimeout(() => {
+          if (control.value !== x) {
+            resolve({'Donotmatch': true});
+          } else {
+            resolve(null);
+          }
+        }
+        , 1500);
+    });
+    return promise;
+  }
 
 }

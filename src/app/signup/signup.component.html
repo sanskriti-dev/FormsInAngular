@@ -5,42 +5,49 @@
           <form [formGroup]="form1" fxLayout="column" fxLayoutAlign="center space-evenly"  >
             <mat-form-field>
               <input matInput placeholder="First Name" formControlName="firstname">
-              <mat-error *ngIf="" >Required</mat-error>
+              <mat-error *ngIf="form1.get('firstname').hasError('required')" >Required Field</mat-error>
+              <mat-error *ngIf= "form1.get('firstname').hasError('pattern')">Field must start with capital letter</mat-error>
             </mat-form-field>
             <mat-form-field>
               <input matInput placeholder="Last Name"  formControlName="lastname">
-              <mat-error>Required</mat-error>
+              <mat-error *ngIf="form1.get('lastname').hasError('required')" >Required Field</mat-error>
+              <mat-error *ngIf= "form1.get('lastname').hasError('pattern')">Field must start with capital letter</mat-error>
             </mat-form-field>
             <mat-form-field>
               <input matInput placeholder="Email"  formControlName="email">
-              <mat-error>Required</mat-error>
+              <mat-error *ngIf="form1.get('email').hasError('required')">Required Field</mat-error>
             </mat-form-field>
             <mat-form-field>
               <input matInput placeholder="Contact"  formControlName="contact">
-              <mat-error>Required</mat-error>
+              <mat-error *ngIf="form1.get('contact').hasError('required')" >Required Field</mat-error>
+              <mat-error *ngIf="form1.get('contact').hasError('pattern')">Field must conatin only number</mat-error>
+              <mat-error *ngIf="form1.get('contact').hasError('maxlength')">Field must have 10 digit number</mat-error>
+              <mat-error *ngIf="form1.get('contact').hasError('minlength')">Field must have 10 digit number</mat-error>
             </mat-form-field>
             <mat-form-field>
               <mat-datepicker #picker></mat-datepicker>
               <input matInput  [matDatepicker]="picker" placeholder="Date of birth" formControlName="Dob">
               <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-error>Required field</mat-error>
+              <mat-error>Required Field</mat-error>
             </mat-form-field>
             <mat-form-field>
-              <mat-select placeholder = "Category">
+              <mat-select placeholder = "Category" [formControl]="form1.controls.category">
                 <mat-option value = "general">General</mat-option>
                 <mat-option value = "obc">OBC</mat-option>
                 <mat-option value = "st">ST</mat-option>
                 <mat-option value = "sc">SC</mat-option>
               </mat-select>
-              <mat-error>Required</mat-error>
+              <mat-error>Required Field</mat-error>
             </mat-form-field>
             <mat-form-field>
-              <input matInput type="password" placeholder="Passsword"  formControlName="password">
-              <mat-error>Required</mat-error>
+              <input matInput type="text" placeholder="Passsword"  formControlName="password" id="id">
+              <mat-error *ngIf="form1.get('password').hasError('required')" >Required Field</mat-error>
+              <mat-error *ngIf="form1.get('password').hasError('pattern')">Field must have Atleast one Captital letter, one small letter,one digit,one special character and must be atleast 6-15 character long</mat-error>
             </mat-form-field>
             <mat-form-field>
-              <input  type="password" matInput placeholder="Confirm Password"  formControlName="confirmpassword">
-              <mat-error>Required</mat-error>
+              <input  type="text" matInput placeholder="Confirm Password"  formControlName="confirmpassword">
+              <mat-error *ngIf="form1.get('confirmpassword').hasError('required')" >Required Field</mat-error>
+              <mat-error *ngIf="form1.get('confirmpassword').hasError('Donotmatch')" >Does not match</mat-error>
             </mat-form-field>
             <button mat-raised-button color="primary" matStepperNext style="align-self: flex-end">Next</button>
           </form>
