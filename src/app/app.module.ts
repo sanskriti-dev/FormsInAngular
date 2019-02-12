@@ -25,7 +25,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import { AcademicsComponent } from './signup/academics/academics.component';
 import { InterestsComponent } from './signup/interests/interests.component';
-
+import { PersonalDetailComponent } from './signup/personal-detail/personal-detail.component';
+import {MatIconModule} from '@angular/material/icon';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -35,9 +36,11 @@ import { InterestsComponent } from './signup/interests/interests.component';
     MainComponent,
     SignupComponent,
     AcademicsComponent,
-    InterestsComponent
+    InterestsComponent,
+    PersonalDetailComponent
   ],
   imports: [
+    MatIconModule,
     MatSelectModule,
     MatRadioModule,
     MatNativeDateModule,

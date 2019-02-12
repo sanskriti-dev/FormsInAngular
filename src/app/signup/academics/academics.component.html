@@ -1,44 +1,59 @@
 <mat-card style="width: auto">
-  <form fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="30px">
+  <form [formGroup]="form2"fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="30px">
     <h4>Class 10</h4>
-    <mat-form-field>
-      <input matInput placeholder="School" formControlName="">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Percentage" formControlName="">
-    </mat-form-field>
-    <h4>Class 12</h4>
-    <mat-form-field>
-      <input matInput placeholder="School" formControlName="">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Percentage" formControlName="">
-    </mat-form-field>
-    <h4>Graduation</h4>
-    <mat-form-field>
-      <mat-select placeholder="Course">
-        <mat-option value="btech">Btech</mat-option>
-        <mat-option value="bsc">Bsc</mat-option>
-        <mat-option value="bcom">Bcom</mat-option>
-        <mat-option value="bba">BBA</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker1" placeholder="Graduation Start year">
+     <mat-form-field>
+       <mat-icon  matSuffix svgIcon="thumbs-up"></mat-icon>
+      <input matInput placeholder="School" formControlName="school10">
+       <mat-error *ngIf="form2.get('school10').hasError('required')">Required Field</mat-error>
+       <mat-error *ngIf="form2.get('school10').hasError('minlength')">Field must have minimum 5 characters</mat-error>
+     </mat-form-field>
+     <mat-form-field>
+      <input matInput placeholder="Percentage" formControlName="percent10">
+       <mat-error *ngIf="form2.get('percent10').hasError('required')">Required Field</mat-error>
+       <mat-error *ngIf="form2.get('percent10').hasError('pattern')">Field must contain percentage with decimal 2 place roundoff</mat-error>
+     </mat-form-field>
+     <h4>Class 12</h4>
+     <mat-form-field>
+      <input matInput placeholder="School" formControlName="school12">
+       <mat-error *ngIf="form2.get('school12').hasError('required')">Required Field</mat-error>
+       <mat-error *ngIf="form2.get('school12').hasError('minlength')">Field must have minimum 5 characters</mat-error>
+     </mat-form-field>
+     <mat-form-field>
+      <input matInput placeholder="Percentage" formControlName="percent12">
+       <mat-error *ngIf="form2.get('percent12').hasError('required')">Required Field</mat-error>
+       <mat-error *ngIf="form2.get('percent12').hasError('pattern')">Field must contain percentage with decimal 2 place roundoff</mat-error>
+      </mat-form-field>
+      <h4>Graduation</h4>
+      <mat-form-field>
+
+        <mat-select  placeholder="Course" [formControl]="form2.controls.course">
+        <mat-option  value="Btech">Btech</mat-option>
+        <mat-option  value="Bsc">Bsc</mat-option>
+        <mat-option  value="Bcom">Bcom</mat-option>
+        <mat-option  value="BBA">BBA</mat-option>
+       </mat-select>
+      <mat-error>Required</mat-error>
+      </mat-form-field>
+     <mat-form-field>
+      <input matInput [matDatepicker]="picker1" placeholder="Graduation Start year" formControlName="startDate">
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
       <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker2" placeholder=" Expected Graduation End Year">
+      <mat-error>Required</mat-error>
+     </mat-form-field>
+     <mat-form-field>
+      <input matInput [matDatepicker]="picker2" placeholder=" Expected Graduation End Year" formControlName="endDate">
       <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
       <mat-datepicker #picker2 startView="year" [startAt]="startDate"></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Percentage" formControlName="">
+      <mat-error>Required</mat-error>
+     </mat-form-field>
+     <mat-form-field>
+      <input matInput placeholder=" Aggregate Percentage" formControlName="percentgraduation">
+       <mat-error *ngIf="form2.get('percentgraduation').hasError('required')">Required Field</mat-error>
+       <mat-error *ngIf="form2.get('percentgraduation').hasError('pattern')">Field must contain percentage with decimal 2 place roundoff</mat-error>
     </mat-form-field>
     <div fxLayoutAlign="space-between">
     <button  mat-raised-button color="primary" matStepperPrevious>Back</button>
-    <button  mat-raised-button color="primary" matStepperNext>Next</button>
+    <button  mat-raised-button color="primary" matStepperNext [disabled]="!form2.valid">Next</button>
     </div>
   </form>
 </mat-card>

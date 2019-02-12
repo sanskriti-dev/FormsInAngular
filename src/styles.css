@@ -67,4 +67,8 @@ mat-step.label
 
   font-family: "Arial Black";
 }
+.mat-horizontal-stepper-header
+{
+  pointer-events: none !important;
+}
 

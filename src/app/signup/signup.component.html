@@ -1,66 +1,58 @@
 <div fxLayoutAlign="center center"   style="top:45%">
-  <mat-horizontal-stepper  style="background: palevioletred">
-  <mat-step label="Personal Details" [completed]="false">
-     <mat-card style="width: auto">
-       <form [formGroup]="form1" fxLayout="column" fxLayoutAlign="center space-evenly"  >
-    <mat-form-field>
-      <input matInput placeholder="First Name" formControlName="firstname">
-      <mat-error >Required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Last Name"  formControlName="lastname">
-      <mat-error>Required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Email"  formControlName="email">
-      <mat-error>Required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Contact"  formControlName="contact">
-      <mat-error>Required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-datepicker #picker></mat-datepicker>
-      <input matInput  [matDatepicker]="picker" placeholder="Date of birth" formControlName="Dob">
-      <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-error>Required field</mat-error>
-    </mat-form-field>
-      <div>
-      <h4>Gender</h4>
-      <mat-radio-group fxLayout="column" fxLayoutGap="10px">
-        <mat-radio-button value="1" formGroupName="gender">Male</mat-radio-button>
-        <mat-radio-button value="2"> Female</mat-radio-button><br>
-        <mat-error>Required</mat-error>
-      </mat-radio-group></div>
-     <mat-form-field>
-       <mat-select placeholder="Category">
-         <mat-option value = "general">General</mat-option>
-         <mat-option value="obc">OBC</mat-option>
-         <mat-option value="st">ST</mat-option>
-         <mat-option value="sc">SC</mat-option>
-       </mat-select>
-     <mat-error>Required</mat-error>
-     </mat-form-field>
-    <mat-form-field>
-      <input matInput type="password" placeholder="Passsword"  formControlName="password">
-      <mat-error>Required</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input  type="password" matInput placeholder="Confirm Password"  formControlName="confirmpassword">
-      <mat-error>Required</mat-error>
-    </mat-form-field>
-    <button mat-raised-button color="primary" matStepperNext style="align-self: flex-end">Next</button>
-  </form>
-     </mat-card>
-  </mat-step >
-  <mat-step label="Academics" [completed]="false">
-    <app-academics></app-academics>
-  </mat-step>
-    <mat-step label="Interests" [completed]="false">
-      <app-interests>
-      </app-interests>
-    </mat-step>
-</mat-horizontal-stepper>
+      <mat-horizontal-stepper  style="background: palevioletred">
+      <mat-step label="Personal Details" [completed]="false">
+        <mat-card style="width: auto">
+          <form [formGroup]="form1" fxLayout="column" fxLayoutAlign="center space-evenly"  >
+            <mat-form-field>
+              <input matInput placeholder="First Name" formControlName="firstname">
+              <mat-error *ngIf="" >Required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Last Name"  formControlName="lastname">
+              <mat-error>Required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Email"  formControlName="email">
+              <mat-error>Required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Contact"  formControlName="contact">
+              <mat-error>Required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-datepicker #picker></mat-datepicker>
+              <input matInput  [matDatepicker]="picker" placeholder="Date of birth" formControlName="Dob">
+              <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-error>Required field</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-select placeholder = "Category">
+                <mat-option value = "general">General</mat-option>
+                <mat-option value = "obc">OBC</mat-option>
+                <mat-option value = "st">ST</mat-option>
+                <mat-option value = "sc">SC</mat-option>
+              </mat-select>
+              <mat-error>Required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Passsword"  formControlName="password">
+              <mat-error>Required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input  type="password" matInput placeholder="Confirm Password"  formControlName="confirmpassword">
+              <mat-error>Required</mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" matStepperNext style="align-self: flex-end">Next</button>
+          </form>
+        </mat-card>
+      </mat-step>
+     <mat-step  label="Academics" [completed]="false" contenteditable="false">
+      <app-academics></app-academics>
+     </mat-step>
+     <mat-step label="Interests" [completed]="false">
+       <app-interests></app-interests>
+     </mat-step>
+     </mat-horizontal-stepper>
 </div>
 
 

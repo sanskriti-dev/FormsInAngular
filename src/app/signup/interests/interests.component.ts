@@ -23,8 +23,10 @@ export class InterestsComponent implements OnInit {
     const control = new FormControl(null, Validators.required);
     (<FormArray>this.interest.get('hobbies')).push(control);
   }
+
   AddInspirations() {
     const control = new FormControl(null, Validators.required);
     (<FormArray>this.interest.get('Inspiration')).push(control);
   }
 }
+
