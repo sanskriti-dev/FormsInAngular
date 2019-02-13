@@ -5,9 +5,11 @@ html, body {
   width: 100%;
   padding: 0;
   margin: 0;
-  background: palevioletred;
-}
+  background: #FC354C;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0ABFBC, #FC354C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
 header,footer
 {
   background: black;
@@ -52,15 +54,12 @@ li:active
   position: fixed;
   top: 30%;
   left:40%
-
-
 }
 .card
 {
   display: flex;
   align-items: center;
   justify-content:center;
-
 }
 mat-step.label
 {

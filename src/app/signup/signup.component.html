@@ -1,12 +1,14 @@
-<div fxLayoutAlign="center center"   style="top:45%">
-      <mat-horizontal-stepper  style="background: palevioletred">
-      <mat-step label="Personal Details" [completed]="false">
-        <mat-card style="width: auto">
+<div fxLayoutAlign="center center">
+      <mat-horizontal-stepper style="margin-top:1%; border-radius: 10px;
+
+ ">
+      <mat-step label="Personal Details" [completed]="false" >
+        <mat-card style="width: auto; border-radius: 10px;" >
           <form [formGroup]="form1" fxLayout="column" fxLayoutAlign="center space-evenly"  >
             <mat-form-field>
               <input matInput placeholder="First Name" formControlName="firstname">
               <mat-error *ngIf="form1.get('firstname').hasError('required')" >Required Field</mat-error>
-              <mat-error *ngIf= "form1.get('firstname').hasError('pattern')">Field must start with capital letter</mat-error>
+              <mat-error *ngIf="form1.get('firstname').hasError('pattern')">Field must start with capital letter</mat-error>
             </mat-form-field>
             <mat-form-field>
               <input matInput placeholder="Last Name"  formControlName="lastname">

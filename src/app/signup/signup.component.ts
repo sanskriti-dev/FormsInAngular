@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
 
   }
+
   form1 = this.fb.group({
     firstname: new FormControl(null, [Validators.required, Validators.pattern('[A-Z][a-zA-Z]*')]),
     lastname: new FormControl(null, [Validators.required, Validators.pattern('[A-Z][a-zA-Z]*')]),
@@ -29,16 +30,14 @@ export class SignupComponent implements OnInit {
 
 
   ConfirmpasswordValidator(control: FormControl): Promise<any> | Observable<any> {
-    const x = document.getElementById('id').value;
     const promise = new Promise<any>((resolve, reject) => {
       setTimeout(() => {
-          if (control.value !== x) {
-            resolve({'Donotmatch': true});
-          } else {
-            resolve(null);
-          }
+        if (control.value !== document.getElementById('id').value) {
+          resolve({'Donotmatch': true});
+        } else {
+          resolve(null);
         }
-        , 1500);
+      }, 1500);
     });
     return promise;
   }
