@@ -1,6 +1,7 @@
 # FC
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+![alt tag](http://www.libpng.org/pub/png/pngs-img.html "Description goes here")
 
 ## Development server
 
