@@ -1,8 +1,7 @@
 <mat-card>
   <form [formGroup]="interest" fxLayout="column" fxLayoutAlign="space-evenly" >
     <div formArrayName="hobbies">
-      <h4>Your Hobbies</h4>
-      <button mat-raised-button color="accent" (click)="AddHobby()">Add</button><br>
+      <h4>Your Hobbies</h4><button mat-raised-button color="accent" (click)="AddHobby()">Add</button><br>
       <div *ngFor=" let s of interest.get('hobbies').controls;let i=index ">
         <input matInput  placeholder="Add hobby" [formControlName]="i">
           <mat-error *ngIf="!interest.get('hobbies').at(i).valid &&  interest.get('hobbies').at(i).touched">Required</mat-error>

@@ -27,8 +27,6 @@ export class SignupComponent implements OnInit {
     category: new FormControl(null, [Validators.required]),
     confirmpassword: new FormControl(null, [Validators.required], this.ConfirmpasswordValidator)
   });
-
-
   ConfirmpasswordValidator(control: FormControl): Promise<any> | Observable<any> {
     const promise = new Promise<any>((resolve, reject) => {
       setTimeout(() => {
@@ -40,6 +38,4 @@ export class SignupComponent implements OnInit {
       }, 1500);
     });
     return promise;
-  }
-
-}
+  }}
