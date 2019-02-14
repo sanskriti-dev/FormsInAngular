@@ -11,7 +11,6 @@ Below are some screenshots of the project-
 ![image](https://github.com/sanskriti-dev/FormsInAngular/blob/master/src/assets/Screenshot.png)
 ![image](https://github.com/sanskriti-dev/FormsInAngular/blob/master/src/assets/images/5.jpeg)
 ![image](https://github.com/sanskriti-dev/FormsInAngular/blob/master/src/assets/images/7.jpeg)
-![alt tag](http://www.libpng.org/pub/png/pngs-img.html "Description goes here")
 
 ## Development server
 
