@@ -1,6 +1,16 @@
-# FC
+#  Reactive forms in Angular || Angular material
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+
+An example of Angular forms with Angular material components, including - FormArrays, Custom FormGroups, basic and asynchronous validations.
+
+Angular Material Components: Form field,Input,Select,Radio button,Datepicker,Checkbox,Card,Stepper,Button
+
+Below are some screenshots of the project-
+
+![image](https://github.com/sanskriti-dev/FormsInAngular/blob/master/src/assets/Screenshot.png)
+![image](https://github.com/sanskriti-dev/FormsInAngular/blob/master/src/assets/images/5.jpeg)
+![image](https://github.com/sanskriti-dev/FormsInAngular/blob/master/src/assets/images/7.jpeg)
 ![alt tag](http://www.libpng.org/pub/png/pngs-img.html "Description goes here")
 
 ## Development server
