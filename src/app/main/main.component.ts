@@ -13,7 +13,7 @@ export class MainComponent {
   }
 
   form = new FormGroup({
-    username: new FormControl(null, [Validators.required, Validators.max(3)]),
+    username: new FormControl(null, [Validators.required]),
     password: new FormControl(null, [Validators.required])
   });
 }
