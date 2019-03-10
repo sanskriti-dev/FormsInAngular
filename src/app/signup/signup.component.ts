@@ -27,15 +27,25 @@ export class SignupComponent implements OnInit {
     category: new FormControl(null, [Validators.required]),
     confirmpassword: new FormControl(null, [Validators.required], this.ConfirmpasswordValidator)
   });
+
+
   ConfirmpasswordValidator(control: FormControl): Promise<any> | Observable<any> {
-    const promise = new Promise<any>((resolve, reject) => {
+    let str;
+    const element = <HTMLInputElement>document.getElementById('id');
+    if (element != null) {
+      str = element.value;
+    } else {
+      str = null;
+    }
+    const promise1 = new Promise<any>((resolve, reject) => {
       setTimeout(() => {
-        if (control.value !== document.getElementById('id').value) {
+        if (control.value !== str) {
           resolve({'Donotmatch': true});
         } else {
           resolve(null);
         }
       }, 1500);
     });
-    return promise;
-  }}
+    return promise1;
+  }
+}
